@@ -1,3 +1,5 @@
+#compdef _sensuctl sensuctl
+compdef _sensuctl sensuctl
 
 __sensu_bash_source() {
 	alias shopt=':'

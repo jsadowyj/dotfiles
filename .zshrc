@@ -48,6 +48,9 @@ _comp_options+=(globdots)		# Include hidden files.
 # Enables bash keybindings
 bindkey -e
 
+# Enable fzf
+source <(fzf --zsh)
+
 # ZSH Autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -60,12 +63,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
-# sensuctl autocompletion
-source <(sensuctl completion zsh)
-
-# kubectl completion
-source <(kubectl completion zsh)
 
 # Better ZSH History
 export HISTFILE="$HOME/.zsh_history"
