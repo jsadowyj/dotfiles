@@ -21,7 +21,11 @@ setopt prompt_subst
 source ~/.zsh/plugins/spectrum.zsh
 
 # Configure autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+if [ -f /opt/homebrew/etc/profile.d/autojump.sh ]; then
+  source /opt/homebrew/etc/profile.d/autojump.sh
+else
+  brew install autojump
+fi
 
 # Customized prompt
 PROMPT='%{$FG[032]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%} ${vcs_info_msg_0_}%{$reset_color%}%(!.#.$) '
@@ -48,16 +52,28 @@ _comp_options+=(globdots)		# Include hidden files.
 # Enables bash keybindings
 bindkey -e
 
-# Enable fzf
-source <(fzf --zsh)
+if command -v fzf &> /dev/null; then
+  # Enable fzf
+  source <(fzf --zsh)
+else
+  brew install fzf
+fi
 
 # ZSH Autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  brew install zsh-autosuggestions
+fi
 
 # ZSH syntax highlightning
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  brew install zsh-syntax-highlighting
+fi
 
 # Disables underlining:
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
