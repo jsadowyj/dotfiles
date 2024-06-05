@@ -1,0 +1,42 @@
+alias ll='ls -lsh --color=auto'
+alias la='ls -lash --color=auto'
+alias lt='ls -lahtr --color=auto'
+alias l="ls -lah --color=auto"
+alias vizsh="vim ~/.zshrc"
+alias c="pbcopy"
+alias p="pbpaste"
+alias history="history 0"
+alias ..="cd .."
+alias ...="cd ../.."
+alias pass='echo -n Password:\  && read -s password && echo $password | pbcopy'
+
+# Git Aliases
+alias gs='git status'
+alias ga='git add'
+alias gp='git push'
+alias gpo='git push origin'
+alias gtd='git tag --delete'
+alias gtdr='git tag --delete origin'
+alias gplo='git pull origin'
+alias gpl='git pull'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gco='git checkout '
+alias gl='git log'
+alias gr='git reset'
+alias grs='git reset --staged'
+alias glo='git log --pretty="oneline"'
+alias glol='git log --graph --oneline --decorate'
+alias gsw='git switch'
+alias gsh='git stash'
+
+# awk aliases
+alias trim="awk '{ gsub(/^[ \s]+|[ \s]+$/, \"\"); print }'"  
+alias ngclean="pbpaste | awk -v ORS=, 'NR % 2' | sed s:,$:: | sed s:,:,\ :g"
+
+# mnx aliases
+alias dmnxssh="ssh -o IdentityFile=~/.ssh/id_manage.pub -l mnxsolutions"
+alias mnx-ansible="ansible -u mnxsolutions --ssh-extra-args '-J manage -o IdentityFile=~/.ssh/id_manage.pub -o StrictHostKeyChecking=no'"
+alias mnx-ansible-playbook="ansible-playbook -u mnxsolutions --ssh-extra-args '-J manage -o IdentityFile=~/.ssh/id_manage.pub -o StrictHostKeyChecking=no'"
