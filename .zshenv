@@ -15,7 +15,12 @@ export TRITON_KEY_ID="$(ssh-keygen -l -f $HOME/.ssh/id_mnx.pub | awk '{print $2}
 unset TRITON_TESTING
 unset TRITON_PROFILE
 
-export PATH="$PATH:/Users/sado/.scripts:/opt/homebrew/opt/sqlite/bin:/Users/sado/Library/Python/3.11/bin"
+# add .scripts to PATH
+export PATH="$PATH:$HOME/.scripts"
+# add pipx bin PATH
+export PATH="$PATH:$HOME/.local/bin"
+# add local man pages to MANPATH
+export MANPATH="$MANPATH:$HOME/.local/share/man"
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
