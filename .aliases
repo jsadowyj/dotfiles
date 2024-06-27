@@ -32,11 +32,9 @@ alias glol='git log --graph --oneline --decorate'
 alias gsw='git switch'
 alias gsh='git stash'
 
+# kubernetes aliases
+alias k='kubectl'
+
 # awk aliases
 alias trim="awk '{ gsub(/^[ \s]+|[ \s]+$/, \"\"); print }'"  
 alias ngclean="pbpaste | awk -v ORS=, 'NR % 2' | sed s:,$:: | sed s:,:,\ :g"
-
-# mnx aliases
-alias dmnxssh="ssh -o IdentityFile=~/.ssh/id_manage.pub -l mnxsolutions"
-alias mnx-ansible="ansible -u mnxsolutions --ssh-extra-args '-J manage -o IdentityFile=~/.ssh/id_manage.pub -o StrictHostKeyChecking=no'"
-alias mnx-ansible-playbook="ansible-playbook -u mnxsolutions --ssh-extra-args '-J manage -o IdentityFile=~/.ssh/id_manage.pub -o StrictHostKeyChecking=no'"
