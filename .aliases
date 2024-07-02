@@ -1,3 +1,5 @@
+#!/bin/sh
+
 alias ll='ls -lsh --color=auto'
 alias la='ls -lash --color=auto'
 alias lt='ls -lahtr --color=auto'
@@ -32,8 +34,21 @@ alias glol='git log --graph --oneline --decorate'
 alias gsw='git switch'
 alias gsh='git stash'
 
+alias nvconfig="cd ~/.config/nvim && /opt/homebrew/bin/nvim"
+
+# dns toys
+alias dy="dig +short @dns.toys"
+
 # kubernetes aliases
 alias k='kubectl'
+
+# ansible aliases
+alias ansible='load_envs; ansible'
+alias ansible-playbook='load_envs; ansible-playbook'
+alias ansible-vault='load_envs; ansible-vault'
+
+# terraform aliases
+alias terraform='load_envs; terraform'
 
 # awk aliases
 alias trim="awk '{ gsub(/^[ \s]+|[ \s]+$/, \"\"); print }'"  
