@@ -1,4 +1,3 @@
-source ~/.aliases
 umask 0022
 
 # Load version control information
@@ -95,3 +94,30 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# source aliases
+test -f $HOME/.aliases && source ~/.aliases
+
+# source .mnx.zshrc if exists
+test -f $HOME/.mnx.zshrc && source $HOME/.mnx.zshrc
+
+function load_envs() {
+  if [ -f $HOME/.env ]; then
+    op inject --account my.1password.com -i $HOME/.env -o $HOME/.env.tmp > /dev/null
+    export $(cat $HOME/.env.tmp | xargs)
+    rm -f $HOME/.env.tmp
+  fi
+}
+
+function manta {
+      local alg=rsa-sha256
+      local keyId=/$MANTA_USER/keys/$MANTA_KEY_ID
+      local now=$(date -u "+%a, %d %h %Y %H:%M:%S GMT")
+      local sig=$(echo "date:" $now | \
+                  tr -d '\n' | \
+                  openssl dgst -sha256 -sign $HOME/.ssh/id_mnx | \
+                  openssl enc -e -a | tr -d '\n')
+
+      curl -sS $MANTA_URL"$@" -H "date: $now"  \
+          -H "Authorization: Signature keyId=\"$keyId\",algorithm=\"$alg\",signature=\"$sig\""
+}
