@@ -27,4 +27,7 @@ export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 # add local man pages to MANPATH
 export MANPATH="$MANPATH:$HOME/.local/share/man"
 
+# ansible vault-pass binary
+test -f $HOME/.bin/vault-env && export ANSIBLE_VAULT_PASSWORD_FILE="$HOME/.bin/vault-env"
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
