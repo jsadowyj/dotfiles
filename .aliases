@@ -41,6 +41,8 @@ alias dy="dig +short @dns.toys"
 
 # kubernetes aliases
 alias k='kubectl'
+alias kx='kubectx'
+alias kns='kubens'
 
 # terraform aliases
 alias terraform='load_envs; terraform'
