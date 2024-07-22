@@ -33,6 +33,7 @@ alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
 alias gsw='git switch'
 alias gsh='git stash'
+alias lg='lazygit'
 
 alias nvconfig="cd ~/.config/nvim && /opt/homebrew/bin/nvim"
 
