@@ -18,12 +18,6 @@ unset TRITON_PROFILE
 # python multithreading workaround
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-# add .bin to PATH
-export PATH="$PATH:$HOME/.bin"
-# add pipx bin PATH
-export PATH="$PATH:$HOME/.local/bin"
-# add gnu binaries to PATH
-export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 # add local man pages to MANPATH
 export MANPATH="$MANPATH:$HOME/.local/share/man"
 

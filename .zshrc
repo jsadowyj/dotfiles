@@ -92,8 +92,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # source aliases
 test -f $HOME/.aliases && source ~/.aliases
@@ -121,3 +119,13 @@ function manta {
       curl -sS $MANTA_URL"$@" -H "date: $now"  \
           -H "Authorization: Signature keyId=\"$keyId\",algorithm=\"$alg\",signature=\"$sig\""
 }
+
+# add .bin to PATH
+export PATH="$HOME/.bin:$PATH"
+# add pipx bin PATH
+export PATH="$HOME/.local/bin:$PATH"
+# add gnu binaries to PATH
+export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$HOME/.rvm/bin:$PATH"
+
