@@ -24,4 +24,5 @@ export MANPATH="$MANPATH:$HOME/.local/share/man"
 # ansible vault-pass binary
 test -f $HOME/.bin/vault-env && export ANSIBLE_VAULT_PASSWORD_FILE="$HOME/.bin/vault-env"
 
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'

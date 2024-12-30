@@ -30,7 +30,8 @@ fi
 PROMPT='%{$FG[032]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%} ${vcs_info_msg_0_}%{$reset_color%}%(!.#.$) '
 
 # Styles git prompt
-zstyle ':vcs_info:git*' formats "%{$FG[247]%}%s:(%{$FG[214]%}%b*%{$FG[247]%})%{$reset_color%} "
+zstyle ':vcs_info:*' check-for-changes false
+zstyle ':vcs_info:git*' formats "%{$FG[247]%}(%{$FG[214]%}%b*%{$FG[247]%})%{$reset_color%} "
 
 # ZSH Autocompletions
 if type brew &>/dev/null; then
@@ -128,4 +129,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.rvm/bin:$PATH"
-
+# kubectl krew plugins
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# add go binaries to PATH
+export PATH="$HOME/go/bin:$PATH"
