@@ -44,10 +44,24 @@ alias dy="dig +short @dns.toys"
 alias k='kubectl'
 alias kx='kubectx'
 alias kns='kubens'
+alias netshoot='kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash'
 
 # terraform aliases
-alias terraform='load_envs; terraform'
+#alias terraform='load_envs; terraform'
 
 # awk aliases
 alias trim="awk '{ gsub(/^[ \s]+|[ \s]+$/, \"\"); print }'"  
 alias ngclean="pbpaste | awk -v ORS=, 'NR % 2' | sed s:,$:: | sed s:,:,\ :g"
+
+# triton cli aliases
+alias t='triton $ACT_AS'
+alias tp='triton -p parler-us-central-1a --act-as parler'
+
+alias trc='triton profile get | grep -e 'name:' | sed -e "s/name:\ //"'
+alias tlc='triton profile ls -oname,curr'
+function tca() {
+    export ACT_AS="--act-as=$1"
+    echo "ACT_AS set to $1"
+}
+alias tcc='export ACT_AS="";  triton profile set "$(triton profile ls -Honame | fzf --tac --no-sort -e )"'
+alias tsh='triton $ACT_AS ssh $(triton $ACT_AS inst list -Ho name | fzf --tac --no-sort -e)'

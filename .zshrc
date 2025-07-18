@@ -4,6 +4,9 @@ umask 0022
 # Add Homebrew to PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# enable comments inside interactive terminal
+setopt interactive_comments
+
 # Add git terminal integration
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
