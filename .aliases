@@ -65,3 +65,5 @@ function tca() {
 }
 alias tcc='export ACT_AS="";  triton profile set "$(triton profile ls -Honame | fzf --tac --no-sort -e )"'
 alias tsh='triton $ACT_AS ssh $(triton $ACT_AS inst list -Ho name | fzf --tac --no-sort -e)'
+
+alias claude="/Users/sado/.claude/local/claude"
