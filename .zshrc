@@ -103,7 +103,7 @@ test -f $HOME/.aliases && source ~/.aliases
 # source .zshrc.local if exists
 test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
 
-# Source local .env varialbes (and export one-by-one so that they are shell-scoped)
+# Source local .env variables (and export one-by-one so that they are shell-scoped)
 test -f $HOME/.env.local && export $(cat $HOME/.env.local | xargs)
 
 # Source local aliases
