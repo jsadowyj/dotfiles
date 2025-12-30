@@ -2,3 +2,5 @@
 .config/iterm2
 .config/sensu
 .zsh/op
+.zsh/completion
+.config/1Password/ssh/agent.toml
