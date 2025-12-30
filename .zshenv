@@ -1,5 +1,6 @@
-export EDITOR="vim"
-export VISUAL="vim"
+export VISUAL="nvim"
+export EDITOR="nvim"
+
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export MANTA_URL=https://us-central.manta.mnx.io
