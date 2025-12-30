@@ -103,6 +103,12 @@ test -f $HOME/.aliases && source ~/.aliases
 # source .zshrc.local if exists
 test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
 
+# Source local .env varialbes (and export one-by-one so that they are shell-scoped)
+test -f $HOME/.env.local && export $(cat $HOME/.env.local | xargs)
+
+# Source local aliases
+test -f $HOME/.aliases.local && source ~/.aliases.local
+
 function load_envs() {
   if [ -f $HOME/.env ]; then
     op inject --account my.1password.com -i $HOME/.env -o $HOME/.env.tmp > /dev/null
