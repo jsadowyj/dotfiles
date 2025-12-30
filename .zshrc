@@ -100,8 +100,8 @@ export NVM_DIR="$HOME/.nvm"
 # source aliases
 test -f $HOME/.aliases && source ~/.aliases
 
-# source .mnx.zshrc if exists
-test -f $HOME/.mnx.zshrc && source $HOME/.mnx.zshrc
+# source .zshrc.local if exists
+test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
 
 function load_envs() {
   if [ -f $HOME/.env ]; then
