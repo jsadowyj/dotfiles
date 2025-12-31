@@ -26,7 +26,7 @@ source ~/.zsh/plugins/spectrum.zsh
 if [ -f /opt/homebrew/etc/profile.d/autojump.sh ]; then
   source /opt/homebrew/etc/profile.d/autojump.sh
 else
-  brew install autojump
+  echo "install autojump: brew install autojump"
 fi
 
 # Customized prompt
@@ -59,7 +59,7 @@ if command -v fzf &> /dev/null; then
   # Enable fzf
   source <(fzf --zsh)
 else
-  brew install fzf
+  echo "install fzf: brew install fzf"
 fi
 
 # ZSH Autosuggestions
@@ -67,15 +67,15 @@ fi
 if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
-  brew install zsh-autosuggestions
+  echo "install zsh-autosuggestions: brew install zsh-autosuggestions"
 fi
 
-# ZSH syntax highlightning
+# ZSH syntax highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting
 if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
-  brew install zsh-syntax-highlighting
+  echo "install zsh-syntax-highlighting: brew install zsh-syntax-highlighting"
 fi
 
 # Disables underlining:
