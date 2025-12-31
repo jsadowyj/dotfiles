@@ -142,3 +142,8 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # add go binaries to PATH
 export PATH="$HOME/go/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sado/.lmstudio/bin"
+# End of LM Studio CLI section
+
