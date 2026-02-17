@@ -95,6 +95,7 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # source aliases
@@ -146,4 +147,3 @@ export PATH="$HOME/go/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sado/.lmstudio/bin"
 # End of LM Studio CLI section
-
